@@ -1,0 +1,67 @@
+﻿
+<html>
+<head>
+<title>点击爆炸效果</title>
+</head>
+<body style="background-color:#000;overflow:hidden">
+<canvas id='canvas'>您的浏览器不支持canvas</canvas>
+</body>
+</html>
+
+
+<script>
+    var canvas = document.getElementById('canvas')
+    canvas.width = window.screen.width
+    canvas.height = window.screen.height
+    var context = canvas.getContext('2d')
+    var x,y   
+    items = []
+
+    setInterval(loop, 20)
+
+    function loop() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        items.forEach(function(circle) {
+            context.beginPath();
+            context.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false);
+            context.fillStyle = 'hsla(' + Math.random() * 360 + ',80%,50%,'+ circle.Alpha +')';  //HSLA(H,S,L,A)
+            context.fill();
+
+            //circle对象运动及半径、透明度变化
+            circle.x += circle.speedX;
+	        circle.speedY += 0.3;  //0.3为重力加速度
+	        circle.y += circle.speedY;
+	        circle.radius = circle.radius *0.98
+	        circle.Alpha -= 0.01
+        })
+    }
+
+    //跟踪鼠标坐标
+    canvas.onmousemove = function(e) {
+        var position = canvas.getBoundingClientRect();
+        x = e.clientX - position.left * (canvas.width / position.width)
+        y = e.clientY - position.top * (canvas.height / position.height)
+    };
+
+    canvas.onmousedown = function() {
+        item = []
+        for (var i = 0; i < 80; i++) {
+            //创建i个爆炸后运动的圆对象
+            item[i] = {
+                x: x,
+                y: y,
+                speedX: Math.random() * 15 - 7,
+                speedY: Math.random() * 15 - 7,
+                radius: 12,
+                Alpha: 0.6
+            };
+            items.push(item[i]);
+            //如果实体items太多，删除旧的对象,避免浏览器卡顿
+            if (items.length > 300) {
+                items.shift()
+            }
+        }
+    }
+
+</script>
