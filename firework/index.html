@@ -32,7 +32,7 @@
             context.fillStyle = 'hsla(' + Math.random() * 360 + ',80%,50%,'+ item.Alpha +')'  //HSLA(H,S,L,A)
             context.fill()
 
-            item.speedY += 0.3  //0.3为重力加速度
+            item.speedY += 0.2  //0.3为重力加速度
 	        item.y += item.speedY
 
 	        //如果礼花弹运动到鼠标点击位置则创建爆炸的圆形组并隐藏礼花弹
@@ -59,7 +59,7 @@
 
             //circle对象运动及半径、透明度变化
             fire.x += fire.speedX
-	        fire.speedY += 0.3  //0.3为重力加速度
+	        fire.speedY += 0.2  //0.3为重力加速度
 	        fire.y += fire.speedY
 	        fire.radius = fire.radius *0.98
 	        fire.Alpha -= 0.01
@@ -84,9 +84,9 @@
             y: window.screen.height,
             boomY: y,
             isBoom: false,
-            speedY: -20,
+            speedY: -17,
             radius: 12,
-            Alpha:0.8
+            Alpha:0.9
         }
         items.push(item)
         if (items.length > 10) {
@@ -101,8 +101,8 @@
             fire[i] = {
                 x: a,
                 y: b,
-                speedX: Math.random() * 15 - 7,
-                speedY: Math.random() * 15 - 7,
+                speedX: Math.random() * 11 - 5,
+                speedY: Math.random() * 11 - 5,
                 radius: 12,
                 Alpha: 0.6
             }
