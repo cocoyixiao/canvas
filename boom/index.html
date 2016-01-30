@@ -51,18 +51,18 @@
     }
 
     function firesmove(){
-    	fires.forEach(function(circle) {
+    	fires.forEach(function(fire) {
             context.beginPath()
-            context.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2, false)
-            context.fillStyle = 'hsla(' + Math.random() * 360 + ',80%,50%,'+ circle.Alpha +')'  //HSLA(H,S,L,A)
+            context.arc(fire.x, fire.y, fire.radius, 0, Math.PI * 2, false)
+            context.fillStyle = 'hsla(' + Math.random() * 360 + ',80%,50%,'+ fire.Alpha +')'  //HSLA(H,S,L,A)
             context.fill()
 
             //circle对象运动及半径、透明度变化
-            circle.x += circle.speedX
-	        circle.speedY += 0.3  //0.3为重力加速度
-	        circle.y += circle.speedY
-	        circle.radius = circle.radius *0.98
-	        circle.Alpha -= 0.01
+            fire.x += fire.speedX
+	        fire.speedY += 0.3  //0.3为重力加速度
+	        fire.y += fire.speedY
+	        fire.radius = fire.radius *0.98
+	        fire.Alpha -= 0.01
         })
     }
 
