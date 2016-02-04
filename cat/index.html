@@ -42,7 +42,7 @@ body{margin:0;paddin:0;text-align: center;display:table;width:100%;height: 100%;
 		//左肚子填充颜色
 		ctx.moveTo(143,105);
 		ctx.bezierCurveTo(210,87,262,99,279,133);
-		ctx.quadraticCurveTo(305,124,354,132);
+		ctx.quadraticCurveTo(305,124,358,134);
 		ctx.quadraticCurveTo(255,57,143,105);
 		ctx.closePath();
 		ctx.fill();
@@ -113,26 +113,23 @@ body{margin:0;paddin:0;text-align: center;display:table;width:100%;height: 100%;
 		ctx.lineTo(312,418);
 		ctx.closePath();
 		ctx.fill();
-		
-		ctx.lineWidth=5;
-		ctx.beginPath();
 
 		ctx.fillStyle="#365359";
 		ctx.beginPath();
 		//底部
-		ctx.moveTo(392,404);
+		ctx.moveTo(391,404);
 		ctx.quadraticCurveTo(428,411,404,427);
 		ctx.bezierCurveTo(359,461,160,479,87,414);
 		ctx.quadraticCurveTo(64,391,96,383);
-		ctx.bezierCurveTo(205,499,403,428,392,404);
+		ctx.bezierCurveTo(205,499,403,428,391,404);
 		ctx.closePath();
 		ctx.fill();
 		
-		ctx.lineWidth=5;
+		ctx.lineWidth=4;
 		ctx.beginPath();
 		//尾巴
-		ctx.moveTo(98,136);
-		ctx.bezierCurveTo(69,65,168,48,183,89);
+		ctx.moveTo(100,135);
+		ctx.bezierCurveTo(69,65,168,48,183,90);
 		//上部身体边缘
 		ctx.moveTo(355,129);
 		ctx.bezierCurveTo(282,80,223,85,183,92);
@@ -170,7 +167,7 @@ body{margin:0;paddin:0;text-align: center;display:table;width:100%;height: 100%;
 		ctx.stroke();
 		ctx.closePath();
 
-		ctx.lineWidth=4;
+		ctx.lineWidth=3;
 		ctx.beginPath();
 		//铃铛右边系带
 		ctx.moveTo(234,400);
