@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>猫咪老师</title>
+	<style>
+		body{text-align: center;}
+		.wrap{  }
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<canvas width="500" height="500"></canvas>
+	</div>
+
+	<script>
+		var canvas=document.querySelector("canvas");
+		var ctx=canvas.getContext("2d");
+		
+		ctx.lineWidth=5;
+		ctx.beginPath();
+		//尾巴边缘
+		ctx.moveTo(98,135);
+		ctx.bezierCurveTo(69,65,168,48,183,89);
+		//上部身体边缘
+		ctx.moveTo(181,91);
+		ctx.bezierCurveTo(223,85,282,80,355,129);
+		//尾巴下部
+		ctx.moveTo(98,140);
+		ctx.quadraticCurveTo(128,103,183,92);
+		//右肚子边缘
+		ctx.moveTo(99,137);
+		ctx.bezierCurveTo(14,231,61,328,65,335);
+		//下肚子边缘
+		ctx.moveTo(65,335);
+		ctx.bezierCurveTo(142,501,370,446,392,405);
+		//右肚子曲线
+		ctx.moveTo(58,207);
+		ctx.bezierCurveTo(41,335,179,299,171,294);
+		//上中部肚子曲线
+		ctx.moveTo(279,133);
+		ctx.bezierCurveTo(262,99,210,87,143,105);
+		//左耳朵顶
+		ctx.moveTo(352,134);
+		ctx.quadraticCurveTo(387,104,397,104);
+		//左耳朵侧
+		ctx.moveTo(397,104);
+		ctx.quadraticCurveTo(398,93,426,189);
+		//左脸
+		ctx.moveTo(426,189);
+		ctx.bezierCurveTo(525,369,408,386,392,405);
+		//头顶边缘曲线
+		ctx.moveTo(352,134);
+		ctx.quadraticCurveTo(290,123,233,147);
+		//头顶左部曲线
+		ctx.moveTo(238,145);
+		ctx.bezierCurveTo(220,191,226,278,345,263);
+		//头顶右部曲线
+		ctx.moveTo(345,263);
+		ctx.bezierCurveTo(418,256,426,185,345,132);
+		//头顶中部曲线
+		ctx.moveTo(345,263);
+		ctx.bezierCurveTo(340,221,334,183,302,132);
+		//右耳朵顶
+		ctx.moveTo(233,147);
+		ctx.quadraticCurveTo(194,122,178,119);
+		//右耳朵侧
+		ctx.moveTo(179,119);
+		ctx.quadraticCurveTo(162,173,184,225);
+		//右脸
+		ctx.moveTo(184,225);
+		ctx.bezierCurveTo(129,380,259,449,396,400);
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.lineWidth=4;
+		ctx.beginPath();
+		//铃铛右边系带
+		ctx.moveTo(234,400);
+		ctx.bezierCurveTo(242,411,289,424,314,424);
+		//铃铛外圈
+		ctx.moveTo(312,418);
+		ctx.bezierCurveTo(310,432,345,442,348,414);
+		//铃铛内圈
+		ctx.moveTo(337,416);
+		ctx.bezierCurveTo(338,421,338,426,333,431);
+		//铃铛左边系带
+		ctx.moveTo(348,420);
+		ctx.bezierCurveTo(361,417,365,416,382,405);
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.lineWidth=2;
+		ctx.beginPath();
+		//右眼上
+		ctx.moveTo(235,319);
+		ctx.bezierCurveTo(258,271,305,296,306,326);
+		//右眼下
+		ctx.moveTo(243,320);
+		ctx.bezierCurveTo(250,314,286,317,297,323);
+		//右眼眼球
+		ctx.moveTo(259,295);
+		ctx.quadraticCurveTo(258,307,261,317);
+		ctx.moveTo(285,296);
+		ctx.quadraticCurveTo(287,305,283,319);
+		//左眼上
+		ctx.moveTo(383,321);
+		ctx.bezierCurveTo(376,294,421,266,434,305);
+		//左眼下
+		ctx.moveTo(390,319);
+		ctx.quadraticCurveTo(409,308,429,307);
+		//左眼眼球
+		ctx.moveTo(395,293);
+		ctx.quadraticCurveTo(394,303,397,314);
+		ctx.moveTo(415,285);
+		ctx.quadraticCurveTo(417,298,416,309);
+		//嘴巴右部
+		ctx.moveTo(331,358);
+		ctx.bezierCurveTo(322,360,345,372,359,359);
+		//嘴巴左部
+		ctx.moveTo(359,359);
+		ctx.bezierCurveTo(369,367,383,358,380,355);
+		//嘴巴上部须
+		ctx.moveTo(351,346);
+		ctx.lineTo(357,350);
+		ctx.moveTo(366,345);
+		ctx.lineTo(363,350);
+		ctx.stroke();
+		ctx.closePath();
+
+	</script>
+</body>
+</html>
