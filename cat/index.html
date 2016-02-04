@@ -67,14 +67,51 @@ body{margin:0;paddin:0;text-align: center;display:table;width:100%;height: 100%;
 		ctx.moveTo(285,296);
 		ctx.quadraticCurveTo(272,288,259,295);
 		ctx.quadraticCurveTo(258,307,261,317);
-		ctx.quadraticCurveTo(274,314,284,319);
+		ctx.quadraticCurveTo(274,314,284,320);
 		ctx.quadraticCurveTo(287,305,285,296);
 		//左眼眼球填色
 		ctx.moveTo(395,293);
-		ctx.quadraticCurveTo(394,303,397,314);
+		ctx.quadraticCurveTo(394,303,397,315);
 		ctx.quadraticCurveTo(406,309,416,309);
 		ctx.quadraticCurveTo(417,298,415,285);
 		ctx.quadraticCurveTo(402,286,395,293);
+		ctx.closePath();
+		ctx.fill();
+
+		ctx.fillStyle="#dd9376";
+		ctx.beginPath();
+		//右脸条纹
+		ctx.moveTo(209,289);
+		ctx.quadraticCurveTo(211,300,219,300);
+		ctx.quadraticCurveTo(215,294,209,289);
+		ctx.moveTo(203,301);
+		ctx.quadraticCurveTo(205,305,203,301);
+		ctx.quadraticCurveTo(205,311,215,309);
+		ctx.moveTo(201,319);
+		ctx.quadraticCurveTo(206,322,214,319);
+		ctx.quadraticCurveTo(206,329,201,319);
+		ctx.moveTo(234,333);
+		ctx.bezierCurveTo(238,339,254,345,261,334);
+		ctx.quadraticCurveTo(249,340,234,333);
+		ctx.moveTo(236,343);
+		ctx.quadraticCurveTo(247,355,259,344);
+		ctx.quadraticCurveTo(248,348,236,343);
+		//左脸条纹
+		ctx.moveTo(442,282);
+		ctx.quadraticCurveTo(448,274,446,269);
+		ctx.bezierCurveTo(455,269,445,284,442,282);
+		ctx.moveTo(446,295);
+		ctx.quadraticCurveTo(454,282,452,281);
+		ctx.bezierCurveTo(460,284,445,300,446,295);
+		ctx.moveTo(447,303);
+		ctx.quadraticCurveTo(455,297,455,296);
+		ctx.bezierCurveTo(461,301,446,304,447,303);
+		ctx.moveTo(424,319);
+		ctx.quadraticCurveTo(435,321,441,315);
+		ctx.quadraticCurveTo(436,326,424,319);
+		ctx.moveTo(424,326);
+		ctx.quadraticCurveTo(438,329,444,321);
+		ctx.bezierCurveTo(447,326,429,335,424,326);
 		ctx.closePath();
 		ctx.fill();
 
