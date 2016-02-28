@@ -17,6 +17,12 @@ body{margin:0;paddin:0;text-align: center;display:table;width:100%;height: 100%;
 		var canvas=document.querySelector("canvas");
 		var ctx=canvas.getContext("2d");
 
+		//背景色设置为白色
+		ctx.beginPath();
+		ctx.fillStyle="#fff";
+		ctx.fillRect(0,0,500,500);
+		ctx.closePath();
+
 		ctx.fillStyle="#736f6e";
 		ctx.beginPath();
 		//头顶左部填充颜色

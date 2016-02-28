@@ -1,0 +1,228 @@
+﻿
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>害怕-高清重制-HTML5</title>
+<style>
+body{margin:0;paddin:0;text-align: center;display:table;width:100%;height: 100%;}
+.wrap{ display:table-cell;vertical-align:middle; }
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<canvas width="600" height="500">您的浏览器不支持canvas</canvas>
+	</div>
+
+	<script>
+		var canvas=document.querySelector("canvas");
+		var ctx=canvas.getContext("2d");
+
+		//背景色设置为白色
+		ctx.beginPath();
+		ctx.fillStyle="#fff";
+		ctx.fillRect(0,0,600,500);
+		ctx.closePath();
+
+		ctx.lineWidth=8;
+		//墙壁那三根坐标线 -_-||
+		ctx.beginPath();
+		ctx.moveTo(149,44);
+		ctx.lineTo(149,383);
+		ctx.lineTo(352,393);
+		ctx.moveTo(149,383);
+		ctx.lineTo(22,444);
+		ctx.stroke();
+		ctx.closePath();
+		//身体轮廓线
+		ctx.fillStyle="#fff";
+		ctx.beginPath();
+		ctx.moveTo(154,258);
+		ctx.quadraticCurveTo(145,262,129,284);
+		ctx.quadraticCurveTo(121,335,149,299);
+		ctx.quadraticCurveTo(160,285,161,299);
+		ctx.lineTo(161,354);
+		ctx.quadraticCurveTo(162,373,167,379);
+		ctx.quadraticCurveTo(185,428,204,377);
+		ctx.bezierCurveTo(220,372,228,371,240,380);
+		ctx.bezierCurveTo(292,431,283,371,265,361);
+		ctx.quadraticCurveTo(258,326,259,308);
+		ctx.quadraticCurveTo(261,278,279,306);
+		ctx.quadraticCurveTo(303,322,295,291);
+		ctx.quadraticCurveTo(283,272,253,246);
+		ctx.fill();
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.lineWidth=5;
+		ctx.strokeStyle='#ec983e';
+    	ctx.save();
+    	//头部圆形阴影效果
+		ctx.shadowOffsetX = 0; 
+  		ctx.shadowOffsetY = 0; 
+  		ctx.shadowBlur = 20; 
+  		ctx.shadowColor = 'rgba(0, 0, 0, 0.5)'; 
+		//脸部渐变颜色
+		var radial = ctx.createRadialGradient(208,160,40,198,189,84);
+		radial.addColorStop(0,'#fce38f');
+		radial.addColorStop(0.5,'#fbd789');
+		radial.addColorStop(0.96,'#f9a640');
+		radial.addColorStop(1,'#ef8b2d');
+		ctx.fillStyle=radial;
+		//头部圆形
+		ctx.beginPath();
+		ctx.arc(198,189,84,0,Math.PI*2,true);
+		ctx.fill();
+		ctx.restore(); 
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.fillStyle="#4c4b46";
+		//眉毛
+		ctx.beginPath();
+		ctx.moveTo(134,123);
+		ctx.bezierCurveTo(143,101,171,111,164,130);
+		ctx.bezierCurveTo(157,106,132,121,134,123);
+		ctx.moveTo(229,131);
+		ctx.bezierCurveTo(220,105,258,105,258,123);
+		ctx.bezierCurveTo(249,115,233,110,229,131);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle="#fff";
+		//眼白
+		ctx.beginPath();
+		ctx.moveTo(115,148);
+		ctx.bezierCurveTo(126,133,183,139,183,148);
+		ctx.quadraticCurveTo(190,157,176,157);
+		ctx.quadraticCurveTo(156,151,123,157);
+		ctx.quadraticCurveTo(109,160,115,148);
+		ctx.moveTo(214,147);
+		ctx.bezierCurveTo(240,131,281,143,280,147);
+		ctx.bezierCurveTo(286,150,282,160,279,158);
+		ctx.bezierCurveTo(264,154,238,153,217,157);
+		ctx.quadraticCurveTo(208,154,214,147);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle="#713304";
+		//眼球
+		ctx.beginPath();
+		ctx.arc(170,148,7,0,Math.PI*2,true);
+		ctx.arc(267,148,7,0,Math.PI*2,true);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.lineWidth=3;
+		ctx.strokeStyle='#e1b15d';
+		//眼眶
+		ctx.beginPath();
+		ctx.moveTo(115,148);
+		ctx.bezierCurveTo(126,133,183,139,183,148);
+		ctx.quadraticCurveTo(190,157,174,157);
+		ctx.quadraticCurveTo(156,151,123,157);
+		ctx.quadraticCurveTo(109,160,115,148);
+		ctx.moveTo(214,147);
+		ctx.bezierCurveTo(240,131,281,143,280,147);
+		ctx.bezierCurveTo(286,150,282,160,279,158);
+		ctx.bezierCurveTo(264,154,238,153,217,157);
+		ctx.quadraticCurveTo(208,154,214,147);
+		ctx.stroke();
+		ctx.closePath();
+
+		ctx.fillStyle='rgba(254,181,138, 0.5)';
+		//酒窝
+		ctx.beginPath();
+		ctx.moveTo(128,165);
+		ctx.quadraticCurveTo(141,159,155,165);
+		ctx.quadraticCurveTo(163,170,155,175);
+		ctx.quadraticCurveTo(141,181,128,175);
+		ctx.quadraticCurveTo(120,170,128,165);
+		ctx.moveTo(241,165);
+		ctx.quadraticCurveTo(254,159,268,165);
+		ctx.quadraticCurveTo(276,170,268,175);
+		ctx.quadraticCurveTo(254,181,241,175);
+		ctx.quadraticCurveTo(233,170,241,165);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle='#6f3205';
+		ctx.save();
+    	//嘴巴底部白色阴影效果
+		ctx.shadowOffsetX = 0; 
+  		ctx.shadowOffsetY = 5; 
+  		ctx.shadowBlur = 10; 
+  		ctx.shadowColor = 'rgba(255, 255, 255, 0.5)'; 
+		//嘴巴
+		ctx.beginPath();
+		ctx.moveTo(129,198);
+		ctx.bezierCurveTo(129,268,265,268,264,197);
+		ctx.bezierCurveTo(260,260,137,260,129,198);
+		ctx.fill();
+		ctx.restore(); 
+		ctx.closePath();
+
+		ctx.fillStyle='#e54d24';
+		//html5标志外框
+		ctx.beginPath();
+		ctx.moveTo(406,73);
+		ctx.lineTo(512,73);
+		ctx.lineTo(502,182);
+		ctx.lineTo(459,193);
+		ctx.lineTo(416,182);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle='#f4622f';
+		//html5标志右部
+		ctx.beginPath();
+		ctx.moveTo(459,81);
+		ctx.lineTo(503,81);
+		ctx.lineTo(494,175);
+		ctx.lineTo(459,185);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle='#fff';
+		//5字
+		ctx.beginPath();
+		ctx.moveTo(426,95);
+		ctx.lineTo(492,95);
+		ctx.lineTo(491,109);
+		ctx.lineTo(441,109);
+		ctx.lineTo(442,122);
+		ctx.lineTo(490,122);
+		ctx.lineTo(487,163);
+		ctx.lineTo(459,171);
+		ctx.lineTo(431,163);
+		ctx.lineTo(429,141);
+		ctx.lineTo(443,141);
+		ctx.lineTo(444,152);
+		ctx.lineTo(459,156);
+		ctx.lineTo(474,152);
+		ctx.lineTo(475,134);
+		ctx.lineTo(429,134);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle='rgba(0, 0, 0, 0.1)';
+		//html5标志左部
+		ctx.beginPath();
+		ctx.moveTo(406,73);
+		ctx.lineTo(459,73);
+		ctx.lineTo(459,193);
+		ctx.lineTo(416,182);
+		ctx.fill();
+		ctx.closePath();
+
+		ctx.fillStyle = "#000";
+		//文字
+		ctx.font = "bold 30px Arial Black";
+		ctx.fillText("HTML", 412, 62);
+		ctx.font = "80px Microsoft YaHei";
+		ctx.fillText("害怕", 384, 378);
+		ctx.font = "50px Microsoft YaHei";
+		ctx.fillText("高清重制", 370, 450);
+
+	</script>
+</body>
+</html>
