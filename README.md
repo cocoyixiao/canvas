@@ -3,3 +3,4 @@
 #http://wx.karlew.com/canvas/afraid/
 #http://wx.karlew.com/canvas/cat/
 #http://wx.karlew.com/canvas/boom/
+#http://wx.karlew.com/canvas/snow/
