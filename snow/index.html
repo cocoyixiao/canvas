@@ -1,0 +1,40 @@
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>HTML5雪花飘落</title>
+	<style>
+		body, html { 
+			padding: 0; 
+			margin: 0;
+		}
+		.container{
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			background: url(img/bg.jpg);
+			background-size: cover;
+		}
+		.canvas {
+			display: block;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			position: fixed;
+			pointer-events: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <canvas class="canvas" speed="0.3" size="1" count="50" wind-power="0.1"></canvas>
+	    <canvas class="canvas" speed="0.4" size="2" count="30" wind-power="0.4"></canvas>
+	</div>
+	
+	<script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.js"></script>
+	<script src="js/snow.js"></script>
+</body>
+</html>
