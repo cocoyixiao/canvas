@@ -1,0 +1,89 @@
+﻿
+<html>
+<head>
+    <title>原子结构图</title>
+</head>
+<body style="overflow:hidden">
+    <canvas id='canvas'>您的浏览器不支持canvas</canvas>
+</body>
+</html>
+
+<script>
+
+    var canvas = document.getElementById('canvas'),
+    cw = canvas.width = document.body.clientWidth,
+    ch = canvas.height = document.body.clientHeight,
+    ctx = canvas.getContext('2d'),
+    x = cw / 2,
+    y = ch / 2,
+    eles = [
+        {a:100,b:30,radius:9,angle:35,speed:0.024,time:180},
+        {a:60,b:130,radius:10,angle:60,speed:-0.025,time:150},
+        {a:190,b:150,radius:10,angle:45,speed:0.015,time:150},
+        {a:80,b:240,radius:11,angle:20,speed:-0.02,time:90},
+        {a:120,b:240,radius:11,angle:80,speed:0.022,time:260},
+        {a:100,b:260,radius:11,angle:-30,speed:-0.022,time:260}
+    ];
+
+    loop();
+    setInterval(function(){
+        loop();
+    }, 10);
+
+    function loop(){
+        ctx.clearRect(0,0,cw,ch);
+        drawAtom();
+        drawElectron();
+    }
+
+    //绘制原子核
+    function drawAtom(){
+        var radius = 15;
+        var radial = ctx.createRadialGradient(x,y,0,x,y,radius);
+		radial.addColorStop(0,'#ec6a68');
+		radial.addColorStop(0.8,'#bd2d30');
+		radial.addColorStop(1,'#ec6a68');
+        ctx.fillStyle = radial;
+        ctx.beginPath();
+        ctx.arc(x,y,radius,0,2*Math.PI,true)
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    //绘制核外电子
+    function drawElectron(){
+        ctx.fillStyle = "#2c6dbd";
+        eles.forEach(function(ele){
+            ctx.save(); 
+		    ctx.translate(x, y);  //设置始点坐标为中间点    
+            ctx.rotate(ele.angle * Math.PI/180);  //旋转角度
+            drawTrack(ele);
+            drawBall(ele)
+            ctx.restore();
+            ele.time += ele.speed;
+        })
+    }
+
+    //绘制电子运动轨迹
+    function drawTrack(ele){
+        var step = (ele.a > ele.b) ? 1 / ele.a : 1 / ele.b;
+        ctx.beginPath();
+        ctx.moveTo(ele.a, 0);
+        for (var i = 0; i < 2 * Math.PI; i += step){
+            ctx.lineTo(ele.a * Math.cos(i), ele.b * Math.sin(i));
+        }
+        ctx.closePath();
+        ctx.stroke();
+    }
+
+    //绘制电子球体
+    function drawBall(ele){
+        ctx.beginPath();
+        var eX = ele.a*Math.cos(ele.time);
+        var eY = ele.b*Math.sin(ele.time);
+        ctx.arc(eX,eY,ele.radius,0,2*Math.PI,true);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+</script>
