@@ -66,10 +66,12 @@
 
     //绘制电子运动轨迹
     function drawTrack(ele){
-        var step = (ele.a > ele.b) ? 1 / ele.a : 1 / ele.b;
+        var dist = (ele.a > ele.b) ? 1 / ele.a : 1 / ele.b;
+        ctx.strokeStyle = "rgba(69,157,245,0.2)";
+        ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(ele.a, 0);
-        for (var i = 0; i < 2 * Math.PI; i += step){
+        for (var i = 0; i < 2 * Math.PI; i += dist){
             ctx.lineTo(ele.a * Math.cos(i), ele.b * Math.sin(i));
         }
         ctx.closePath();

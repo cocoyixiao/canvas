@@ -69,21 +69,26 @@
     function drawTrack(ele){
         var dist = (ele.a > ele.b) ? 1 / ele.a : 1 / ele.b;
         ctx.strokeStyle = "rgba(69,157,245,0.2)";
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(ele.a * Math.cos(i), ele.b * Math.sin(i));
+        var lineWidth = 2 * ele.radius
         if(ele.speed<0){
             for (var i = ele.time; i < 0.6 * Math.PI + ele.time; i += dist){
+                ctx.lineWidth = lineWidth = lineWidth*0.99;
+                ctx.beginPath();
+                ctx.moveTo(ele.a * Math.cos(i), ele.b * Math.sin(i));
                 ctx.lineTo(ele.a * Math.cos(i+dist), ele.b * Math.sin(i+dist));
+                ctx.closePath();
+                ctx.stroke();
             }
-            
         }else{
             for (var i = ele.time; i > -0.6 * Math.PI + ele.time; i += -dist){
+                ctx.lineWidth = lineWidth = lineWidth*0.98;
+                ctx.beginPath();
+                ctx.moveTo(ele.a * Math.cos(i), ele.b * Math.sin(i));
                 ctx.lineTo(ele.a * Math.cos(i-dist), ele.b * Math.sin(i-dist));
+                ctx.closePath();
+                ctx.stroke();
             }
         }
-        ctx.stroke();
-        ctx.closePath();
     }
 
     //绘制电子球体
